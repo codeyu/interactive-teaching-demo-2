@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>图片上传</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/dropzone.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body translate="no">
+    <h1>请上传你组的作品，最多三张</h1>
+    <section>
+        <div id="dropzone">
+            <form class="dropzone needsclick dz-clickable" id="my-dropzone" action="/File">
+                <div class="dz-message needsclick">
+                    拖一个文件到此区域或点击此区域上传<br>
+                    <SPAN class="note needsclick">(文件的命名方式是
+                        <STRONG>组名-文件序号.jpg</STRONG>)</SPAN>
+                </div>
+            </form>
+        </div>
+    </section>
+    <div class="box">
+        <button id="submit-all" type="button" class="btn btn-primary">上传所有文件</button>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dropzone.min.js"></script>
+    <script src="js/uuid.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
