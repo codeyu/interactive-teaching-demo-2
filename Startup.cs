@@ -35,7 +35,7 @@ namespace interactive_teaching_demo_2
                 //允许额外符号
                 options.JsonSerializerOptions.AllowTrailingCommas = true;
                 //反序列化过程中属性名称是否使用不区分大小写的比较
-                options.JsonSerializerOptions.PropertyNameCaseInsensitive = false;
+                options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
             });
             services.Configure<LiteDbOptions>(Configuration.GetSection("LiteDbOptions"));
             services.AddSingleton<ILiteDbContext, LiteDbContext>();
