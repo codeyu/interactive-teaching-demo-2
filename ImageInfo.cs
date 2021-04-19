@@ -9,5 +9,7 @@ namespace interactive_teaching_demo_2
         public string Name { get; set; }
 
         public string Group => Name.Split("-")[0];
+
+        public int ImageIndex {get; set;}
     }
 }
