@@ -32,6 +32,14 @@ namespace interactive_teaching_demo_2.Controllers
         }
         [HttpGet]
         [Route("[action]")]
+        public IEnumerable<ImageScore> GetLevel()
+        {
+            var result = _liteDb.GetCollection<ImageScore>("ImageScore")
+                .FindAll();
+            return result;
+        }
+        [HttpGet]
+        [Route("[action]")]
         public IEnumerable<ImageScore> GetScore()
         {
             var result = _liteDb.GetCollection<ImageScore>("ImageScore")
