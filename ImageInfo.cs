@@ -8,8 +8,8 @@ namespace interactive_teaching_demo_2
 
         public string Name { get; set; }
 
-        public string Group => Name.Split("-")[0];
+        public string Group => Name.Substring(0, 3);
 
-        public int ImageIndex {get; set;}
+        public int ImageIndex => Convert.ToInt32(Name.Split(".")[0].Substring(3, 1));
     }
 }

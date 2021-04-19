@@ -32,11 +32,14 @@ namespace interactive_teaching_demo_2.Controllers
         }
         [HttpGet]
         [Route("[action]")]
-        public IEnumerable<ImageScore> GetLevel()
+        public IEnumerable<GroupResult> GetLevel()
         {
             var result = _liteDb.GetCollection<ImageScore>("ImageScore")
                 .FindAll();
-            return result;
+            var gr = from e in result
+                        group e by e.GroupName into g
+                        select new GroupResult { Group = g.Key, Score = (g.Sum(x => x.Score) / (float)result.Count()).ToString("f2")};
+            return gr.OrderByDescending(x=>x.Score);
         }
         [HttpGet]
         [Route("[action]")]
