@@ -13,5 +13,6 @@ namespace interactive_teaching_demo_2
         public DateTime Date { get; set; }
         public int Score {get;set;}
         public string ImageName { get; set; }
+        public string GroupName {get;set;}
     }
 }
